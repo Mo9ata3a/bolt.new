@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             id="search"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Entrez un terme de recherche"
+            placeholder="Nutella, Coca-Cola, Nido, ..."
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors"
           />
         </div>

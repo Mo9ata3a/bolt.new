@@ -5,7 +5,7 @@ import {
   Instagram, 
   Linkedin, 
   Youtube, 
-  MessageSquare, 
+  MessageSquare,
   Phone
 } from 'lucide-react';
 
@@ -58,10 +58,10 @@ export const Footer: React.FC = () => {
            <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul className="space-y-2">
-              <li className="flex items-center text-gray-400 text-sm">
+              {/* <li className="flex items-center text-gray-400 text-sm">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+33 1 23 45 67 89</span>
-              </li>
+                <span>+0000 000 000</span>
+              </li> */}
               <li className="flex items-center text-gray-400 text-sm">
                 <MessageSquare className="h-4 w-4 mr-2" />
                 <span>badayli@protonmail.com</span>
@@ -100,15 +100,7 @@ export const Footer: React.FC = () => {
               >
                 <Instagram size={18} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gray-800 text-blue-400 hover:bg-blue-700 hover:text-white p-2 rounded-full transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
+             
               <a 
                 href="https://youtube.com" 
                 target="_blank" 
@@ -127,9 +119,9 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} ProSearch. Tous droits réservés.
+            © {new Date().getFullYear()} Badayli. Tous droits réservés.
           </p>
-          <div className="mt-4 md:mt-0">
+          {/* <div className="mt-4 md:mt-0">
             <ul className="flex space-x-4 text-xs text-gray-500">
               <li>
                 <a href="/privacy" className="hover:text-blue-400 transition-colors duration-200">
@@ -147,7 +139,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
