@@ -1,21 +1,15 @@
-import { Product } from '../types';
+import { supabase } from '../lib/supabaseClient';
 
-const API_BASE_URL = 'https://mon-api-three.vercel.app/api/products/search';
+export async function searchProducts(p_search_term: string) {
+  if (!p_search_term) return [];
 
-export async function searchProducts(term: string): Promise<Product[]> {
-  if (!term) return [];
-  
-  try {
-    const response = await fetch(`${API_BASE_URL}/${encodeURIComponent(term)}`);
-    
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
-    }
-    
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching products:', error);
+  const { data, error } = await supabase
+    .rpc('search_products', { p_search_term });
+
+  if (error) {
+    console.error('RPC error:', error.message);
     throw error;
   }
+
+  return data;
 }

@@ -57,7 +57,11 @@ function App() {
           onCategoryChange={setCategory}
           onSubmit={executeSearch}
         />
-        
+        {!loading && !error && products.length > 0 && (
+          <div className="mt-4 text-sm text-gray-500">
+            {products.length} produit{products.length > 1 ? 's' : ''} trouvé{products.length > 1 ? 's' : ''}
+          </div>
+        )}
         <ProductList 
           products={products}
           loading={loading}
